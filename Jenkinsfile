@@ -8,8 +8,8 @@ def getFtpPublishProfile(def publishProfilesJson) {
 }
 
 node {
-  withEnv(['AZURE_SUBSCRIPTION_ID=fb37d662-1ffb-450c-8418-a170c96fb2b0',
-        'AZURE_TENANT_ID=6ac5be50-aa0f-4aa2-a6c2-92b978805c47']) {
+  withEnv(['AZURE_SUBSCRIPTION_ID=f9f7da8a-ba38-43d6-bbd0-ba0269caaa83',
+        'AZURE_TENANT_ID=5b32d8de-feb4-4395-80e2-510b9e6fd695']) {
     stage('init') {
       checkout scm
     }
@@ -20,7 +20,7 @@ node {
   
     stage('deploy') {
       def resourceGroup = 'jenkins-get-started-rg'
-      def webAppName = 'BShi-java-web-app'
+      def webAppName = 'xinnanzhouapp'
       // login Azure
       withCredentials([usernamePassword(credentialsId: 'AzureServicePrincipal', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
